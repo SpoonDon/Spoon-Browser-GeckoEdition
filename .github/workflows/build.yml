@@ -27,7 +27,7 @@ jobs:
             ${{ runner.os }}-gradle-
 
       - name: Generate Official Gradle Wrapper
-        run: gradle wrapper --gradle-version 8.11
+        run: gradle wrapper --gradle-version 9.4.1
 
       - name: Build APK
         run: ./gradlew assembleRelease
