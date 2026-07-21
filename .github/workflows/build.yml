@@ -20,7 +20,7 @@ jobs:
           distribution: 'temurin'
 
       - name: Generate Gradle Wrapper
-        run: gradle wrapper --gradle-version 8.10
+        run: gradle wrapper --gradle-version 9.6.1
 
       - name: Build Debug APK
         run: ./gradlew assembleDebug
