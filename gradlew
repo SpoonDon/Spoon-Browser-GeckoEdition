@@ -16,7 +16,7 @@ GRADLE_WRAPPER_JAR="$SCRIPT_DIR/gradle/wrapper/gradle-wrapper.jar"
 # If the wrapper JAR is missing, pull it from the official Gradle distribution
 if [ ! -f "$GRADLE_WRAPPER_JAR" ]; then
   echo "Wrapper JAR not found – downloading..."
-  curl -L -o "$GRADLE_WRAPPER_JAR" https://services.gradle.org/distributions/gradle-8.5-bin.zip \
+  curl -L -o "$GRADLE_WRAPPER_JAR" https://services.gradle.org/distributions/gradle-8.11-bin.zip \
     && unzip -q -o "$GRADLE_WRAPPER_JAR" -d "$(dirname "$GRADLE_WRAPPER_JAR")"
 fi
 
