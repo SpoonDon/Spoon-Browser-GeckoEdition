@@ -2,12 +2,14 @@ package com.spoon.geckobrowser;
 
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
+import org.mozilla.geckoview.GeckoRuntime;
 import org.mozilla.geckoview.GeckoSession;
 import org.mozilla.geckoview.GeckoView;
 
 public class MainActivity extends AppCompatActivity {
     private GeckoView geckoView;
     private GeckoSession session;
+    private GeckoRuntime runtime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,9 +18,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(geckoView);
 
         session = new GeckoSession();
-        session.open(new GeckoSession.Settings());
+        runtime = GeckoRuntime.create(this);
+        
+        session.open(runtime); // Correctly passes the runtime
         geckoView.setSession(session);
-        session.loadUri("https://duckduckgo.com");   // start page
+        session.loadUri("https://duckduckgo.com");
     }
 
     @Override
